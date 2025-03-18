@@ -13,6 +13,7 @@ from storages import S3StorageInterface
 
 router = APIRouter()
 
+
 @router.post(
     "/users/{user_id}/profile/",
     response_model=ProfileCreateResponseSchema,
@@ -58,7 +59,6 @@ async def create_profile(
             detail="User not found or not active."
         )
 
-
     if user.profile:
         raise HTTPException(
             status_code=400,
@@ -99,5 +99,3 @@ async def create_profile(
         info=new_profile.info,
         avatar=avatar_url
     )
-
-

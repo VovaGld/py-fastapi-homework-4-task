@@ -10,6 +10,7 @@ from validation import (
     validate_birth_date
 )
 
+
 class ProfileCreateSchema(BaseModel):
     first_name: str
     last_name: str
@@ -17,6 +18,7 @@ class ProfileCreateSchema(BaseModel):
     date_of_birth: date
     info: str
     avatar: UploadFile
+
     @classmethod
     def from_form(
             cls,
@@ -92,4 +94,3 @@ class ProfileCreateResponseSchema(BaseModel):
     date_of_birth: date
     info: str
     avatar: HttpUrl
-
